@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+
+service Users {
+    rpc One(GetUser) returns (UserFound) {}
+}
+
+message GetUser {
+    string id = 1;
+}
+
+message UserFound {
+    string username = 1;
+}
