@@ -15,7 +15,7 @@ type server struct {
 	pb.UnimplementedUsersServer
 }
 
-func (s *server) GetUser(ctx context.Context, in *pb.GetUser) (*pb.UserFound, error) {
+func (s *server) One(ctx context.Context, in *pb.GetUser) (*pb.UserFound, error) {
 	log.Printf("Received: %v ", in.GetId())
 	return &pb.UserFound{Username: "userId is " + in.GetId()}, nil
 }
